@@ -24,7 +24,8 @@ app.use(
 //}
 app.disable("etag");
 
-app.use("/api/rest", validateToken, routes);
+//app.use("/api/rest", validateToken, routes);
+app.use("/api/rest", routes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () =>
