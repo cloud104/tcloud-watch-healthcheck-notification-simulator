@@ -5,9 +5,11 @@ module.exports = {
     postNotification(request, response) {
         const notification = {
             id: uuidv4(),
-            notifiedTo: ["whatsapp", "email"],
+            receivedAt: new Date(),
+            notifiedTo: ["example"],
             ...request.body
-        };        
+        };
+        console.log(JSON.stringify(notification, null, 2));
         return response.status(201).json(notification);
     }
 }
