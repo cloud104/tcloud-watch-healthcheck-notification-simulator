@@ -2,6 +2,7 @@
   "name": "tcloud-watch-healthcheck-notification-simulator",
   "version": "1.0.0",
   "main": "src/index.js",  
+  "license": "UNLICENSED",
   "dependencies": {
     "cors": "^2.8.5",
     "dayjs": "^1.9.6",
