@@ -2,15 +2,6 @@ const { networkInterfaces } = require("os");
 
 const express = require("express");
 const app = express();
-const {
-  uniqueNamesGenerator,
-  names,
-  adjectives,
-  animals,
-  colors,
-  starWars,
-  countries,
-} = require("unique-names-generator");
 
 module.exports = {
   isDevelopmentEnv() {
@@ -38,37 +29,8 @@ module.exports = {
     });
     return result;
   },
-  getRandomName() {
-    const config = {
-      dictionaries: [names],
-    };
-    return uniqueNamesGenerator(config);
-  },
-  getRandomCrazyName() {
-    const config = {
-      dictionaries: [colors, adjectives, animals],
-      separator: " ",
-      style: "upperCase",
-    };
-    return uniqueNamesGenerator(config);
-  },
-  getRandomColorCountry() {
-    const config = {
-      dictionaries: [colors, countries],
-      separator: " ",
-      style: "upperCase",
-    };
-    return uniqueNamesGenerator(config);
-  },
-  getRandomStarWarsName() {
-    const config = {
-      dictionaries: [starWars],
-    };
-    return uniqueNamesGenerator(config);
-  },
   logMsg(domain, method, msg) {
-    const dayjs = require("dayjs");
-    const debug = require("debug")(`smart_backend:${domain}`);
-    debug(`${dayjs().toISOString()} - ${method} -> ${msg}`);
+    const dayjs = require("dayjs");    
+    console.log(`${dayjs().toISOString()} - ${method} -> ${msg}`);
   },
 };
